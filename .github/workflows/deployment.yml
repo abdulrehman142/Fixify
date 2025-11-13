@@ -17,7 +17,7 @@ jobs:
       # 1. Checkout the repository
       - uses: actions/checkout@v3
 
-      # 2. Setup Node 22 with npm cache
+      # 2. Setup Node 22 with npm caching
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
