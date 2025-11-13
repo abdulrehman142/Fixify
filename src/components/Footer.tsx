@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import wd from "/Fixify_images/discordicon.png";
-import wtt from "/Fixify_images/tiktokicon.png";
-import wyt from "/Fixify_images/youtubeicon.png";
-import dd from "/Fixify_images/ddiscord.png";
-import dtt from "/Fixify_images/dtiktok.png";
-import dyt from "/Fixify_images/dyoutube.png";
-import sun from "/Fixify_images/sun.png";
-import moon from "/Fixify_images/moon.png";
+import wd from "/Fixify_images/discordicon.jpg";
+import wtt from "/Fixify_images/tiktokicon.jpg";
+import wyt from "/Fixify_images/youtubeicon.jpg";
+import dd from "/Fixify_images/ddiscord.jpg";
+import dtt from "/Fixify_images/dtiktok.jpg";
+import dyt from "/Fixify_images/dyoutube.jpg";
+import sun from "/Fixify_images/sun.jpg";
+import moon from "/Fixify_images/moon.jpg";
 
 interface FooterProps {
   darkMode: boolean;

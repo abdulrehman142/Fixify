@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import logo from "/Fixify_images/fixifylogo.png";
-import wdd from "/Fixify_images/dropdown.png";
+import logo from "/Fixify_images/fixifylogo.jpg";
+import wdd from "/Fixify_images/dropdown.jpg";
 
 // 🟢 Light mode icons
-import wtt from "/Fixify_images/tiktokicon.png";
-import wyt from "/Fixify_images/youtubeicon.png";
-import wd from "/Fixify_images/discordicon.png";
-import wdm from "/Fixify_images/wdarkmodeicon.png";
+import wtt from "/Fixify_images/tiktokicon.jpg";
+import wyt from "/Fixify_images/youtubeicon.jpg";
+import wd from "/Fixify_images/discordicon.jpg";
+import wdm from "/Fixify_images/wdarkmodeicon.jpg";
 
 // ⚫ Dark mode icons
-import dtt from "/Fixify_images/dtiktok.png";
-import dyt from "/Fixify_images/dyoutube.png";
-import dd from "/Fixify_images/ddiscord.png";
-import ddm from "/Fixify_images/ddarkmodeicon.png";
-import ddd from "/Fixify_images/ddropdown.png";
+import dtt from "/Fixify_images/dtiktok.jpg";
+import dyt from "/Fixify_images/dyoutube.jpg";
+import dd from "/Fixify_images/ddiscord.jpg";
+import ddm from "/Fixify_images/ddarkmodeicon.jpg";
+import ddd from "/Fixify_images/ddropdown.jpg";
 // 🌙 Moon icon for hover state
-import wmoon from "/Fixify_images/wmoon.png";
+import wmoon from "/Fixify_images/wmoon.jpg";
 
 import "../index.css";
 

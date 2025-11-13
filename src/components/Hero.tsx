@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import si from "/Fixify_images/searchicon.png";
+import si from "/Fixify_images/searchicon.jpg";
 const Hero = () => {
   const [search, setSearch] = useState("Search for any service...");
   const [isFocused, setIsFocused] = useState<string | null>(null);
