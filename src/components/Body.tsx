@@ -26,7 +26,7 @@ interface BodyProps {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Body = ({ darkMode, setDarkMode }: BodyProps) => {
+const Body = ({ darkMode }: BodyProps) => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <div

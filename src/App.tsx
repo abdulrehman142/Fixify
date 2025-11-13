@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.css";
 import { useState } from "react";
 import Hero from "./components/Hero";

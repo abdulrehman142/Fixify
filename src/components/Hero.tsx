@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import si from "/Fixify_images/searchicon.png";
 const Hero = () => {
   const [search, setSearch] = useState("Search for any service...");
@@ -38,7 +38,7 @@ const Hero = () => {
           }`}
           contentEditable
           suppressContentEditableWarning
-          onFocus={(e) => setIsFocused(id)}
+          onFocus={() => setIsFocused(id)}
           onBlur={(e) => {
             if (isFocused === id) setIsFocused(null);
             // Restore placeholder if empty
