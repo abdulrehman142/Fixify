@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "/Fixify_images/fixifylogo.jpg";
 import wdd from "/Fixify_images/dropdown.jpg";
 
@@ -18,6 +19,7 @@ import ddd from "/Fixify_images/ddropdown.jpg";
 import wmoon from "/Fixify_images/wmoon.jpg";
 
 import "../index.css";
+import Dropdown from "../components/Dropdown";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -66,6 +68,8 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 };
 
 const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
+  const [hoveredService, setHoveredService] = useState(false);
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="flex dark:bg-black bg-white items-center justify-between pl-4 ">
@@ -79,7 +83,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
           </div>
 
           {/* 🟣 Middle: Nav Links */}
-          <div className="flex p-6">
+          <div className="flex p-6 relative">
             {[
               { name: "Home", href: "/" },
               { name: "Services", href: "/services" },
@@ -88,22 +92,43 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               { name: "Contact Us", href: "/contact" },
               { name: "Pricing", href: "/pricing" },
             ].map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap"
+              <div 
+                key={index} 
+                className="relative"
+                onMouseEnter={() => item.name === "Services" && setHoveredService(true)}
+                onMouseLeave={() => item.name === "Services" && setHoveredService(false)}
               >
-                <span className="flex items-center group-hover:text-white">
-                  {item.name}
-                  {item.name === "Services" && (
-                    <img
-                      src={darkMode ? wdd : ddd}
-                      alt="Dropdown"
-                      className="h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200"
-                    />
-                  )}
-                </span>
-              </a>
+                {item.name === "Services" ? (
+                  <Link
+                    to={item.href}
+                    className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap cursor-pointer"
+                  >
+                    <span className="flex items-center group-hover:text-white">
+                      {item.name}
+                      <img
+                        src={darkMode ? wdd : ddd}
+                        alt="Dropdown"
+                        className="h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200"
+                      />
+                    </span>
+                  </Link>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap"
+                  >
+                    <span className="flex items-center group-hover:text-white">
+                      {item.name}
+                    </span>
+                  </Link>
+                )}
+                {/* Dropdown positioned below Services link - shows on hover */}
+                {item.name === "Services" && hoveredService && (
+                  <div className="absolute top-full left-0 z-50 mt-1">
+                    <Dropdown darkMode={darkMode} />
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 

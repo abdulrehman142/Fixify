@@ -69,33 +69,33 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
           <div className="font-ibm-plex-mono dark:text-[#FFFFFF] text-black flex flex-col xl:flex-row font-medium m-2">
             {/* First Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
-              <a href="#" className={navLinkClass}>
+              <Link to="/" className={navLinkClass}>
                 Home
-              </a>
-              <a href="/services" className={navLinkClass}>
+              </Link>
+              <Link to="/services" className={navLinkClass}>
                 Services
-              </a>
-              <a href="/how-it-works" className={navLinkClass}>
+              </Link>
+              <Link to="/how-it-works" className={navLinkClass}>
                 How it works
-              </a>
+              </Link>
             </div>
             {/* Second Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
-              <a href="contact" className={navLinkClass}>
+              <Link to="/contact" className={navLinkClass}>
                 Contact Us
-              </a>
-              <a href="pricing" className={navLinkClass}>
+              </Link>
+              <Link to="/pricing" className={navLinkClass}>
                 Pricing
-              </a>
-              <a href="" className={navLinkClass}>
+              </Link>
+              <Link to="/signin" className={navLinkClass}>
                 Sign In
-              </a>
+              </Link>
             </div>
             {/* Third Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
-              <a href="/about" className={navLinkClass}>
+              <Link to="/about" className={navLinkClass}>
                 About Us
-              </a>
+              </Link>
             </div>
           </div>
 
