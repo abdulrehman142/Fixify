@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "/Fixify_images/fixifylogo.jpg";
 import wdd from "/Fixify_images/dropdown.jpg";
@@ -20,6 +20,8 @@ import wmoon from "/Fixify_images/wmoon.jpg";
 
 import "../index.css";
 import Dropdown from "../components/Dropdown";
+import register from "/Fixify_images/register.png";
+import login from "/Fixify_images/login.png";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -68,7 +70,23 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 };
 
 const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
-  const [hoveredService, setHoveredService] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -92,15 +110,14 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               { name: "Contact Us", href: "/contact" },
               { name: "Pricing", href: "/pricing" },
             ].map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="relative"
-                onMouseEnter={() => item.name === "Services" && setHoveredService(true)}
-                onMouseLeave={() => item.name === "Services" && setHoveredService(false)}
+                ref={item.name === "Services" ? dropdownRef : null}
               >
                 {item.name === "Services" ? (
-                  <Link
-                    to={item.href}
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap cursor-pointer"
                   >
                     <span className="flex items-center group-hover:text-white">
@@ -108,10 +125,12 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                       <img
                         src={darkMode ? wdd : ddd}
                         alt="Dropdown"
-                        className="h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200"
+                        className={`h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200 ${
+                          isDropdownOpen ? "rotate-180" : ""
+                        }`}
                       />
                     </span>
-                  </Link>
+                  </button>
                 ) : (
                   <Link
                     to={item.href}
@@ -122,8 +141,8 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                     </span>
                   </Link>
                 )}
-                {/* Dropdown positioned below Services link - shows on hover */}
-                {item.name === "Services" && hoveredService && (
+                {/* Dropdown positioned below Services link - shows on click */}
+                {item.name === "Services" && isDropdownOpen && (
                   <div className="absolute top-full left-0 z-50 mt-1">
                     <Dropdown darkMode={darkMode} />
                   </div>
@@ -137,46 +156,46 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             {/* Social Icons */}
             <div className="flex">
               <a
-                  href="https://www.instagram.com/gofixify/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-              <SocialIcon
-                darkMode={darkMode}
-                lightImg={di}
-                lightHover={wi}
-                darkImg={wi}
-                darkHover={wi}
-                alt="Instagram"
-              />
-              </a>
-               <a
-                  href="https://www.youtube.com/@FixifySupport"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-              <SocialIcon
-                darkMode={darkMode}
-                lightImg={dyt}
-                lightHover={wyt}
-                darkImg={wyt}
-                darkHover={wyt}
-                alt="YouTube"
-              />
+                href="https://www.instagram.com/gofixify/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SocialIcon
+                  darkMode={darkMode}
+                  lightImg={di}
+                  lightHover={wi}
+                  darkImg={wi}
+                  darkHover={wi}
+                  alt="Instagram"
+                />
               </a>
               <a
-                  href="https://discord.com/users/1441059991518842951"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-              <SocialIcon
-                darkMode={darkMode}
-                lightImg={dd}
-                lightHover={wd}
-                darkImg={wd}
-                darkHover={wd}
-                alt="Discord"
-              />
+                href="https://www.youtube.com/@FixifySupport"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SocialIcon
+                  darkMode={darkMode}
+                  lightImg={dyt}
+                  lightHover={wyt}
+                  darkImg={wyt}
+                  darkHover={wyt}
+                  alt="YouTube"
+                />
+              </a>
+              <a
+                href="https://discord.com/users/1441059991518842951"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SocialIcon
+                  darkMode={darkMode}
+                  lightImg={dd}
+                  lightHover={wd}
+                  darkImg={wd}
+                  darkHover={wd}
+                  alt="Discord"
+                />
               </a>
               {/* Dark Mode Toggle */}
               <SocialIcon
@@ -193,12 +212,18 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         </div>
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
-          <button className="hover:underline bg-[#231212] font-ibm-plex-mono text-white text-sm px-4 py-2 rounded hover:opacity-90 transition-all">
-            Sign In
-          </button>
-          <button className="hover:underline bg-[#231212] font-ibm-plex-mono text-white text-sm px-4 py-2 rounded hover:opacity-90 transition-all">
-            Login
-          </button>
+          <div className="flex items-center bg-[#231212] rounded ">
+            <img src={register} alt="register" className="pl-1 h-5 w-6" />
+            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+              Register
+            </button>
+          </div>
+          <div className="flex items-center bg-[#231212] rounded ">
+            <img src={login} alt="login" className="pl-1 h-5 w-6" />
+            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </div>

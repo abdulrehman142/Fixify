@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
         </div>
         <img
           src={tc}
-          alt="Privacy Policy Banner"
+          alt="Banner"
           className="h-70 w-70"
         />
       </div>
