@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import wd from "/Fixify_images/discordicon.jpg";
-import wtt from "/Fixify_images/tiktokicon.jpg";
+import wi from "/Fixify_images/winstagram.jpg";
 import wyt from "/Fixify_images/youtubeicon.jpg";
 import dd from "/Fixify_images/ddiscord.jpg";
-import dtt from "/Fixify_images/dtiktok.jpg";
+import di from "/Fixify_images/dinstagram.jpg";
 import dyt from "/Fixify_images/dyoutube.jpg";
 import sun from "/Fixify_images/sun.jpg";
 import moon from "/Fixify_images/moon.jpg";
@@ -20,9 +21,11 @@ interface SocialIconProps {
   darkImg: string;
   darkHover: string;
   alt: string;
+  className?: string;
 }
 
-const SocialIcon: React.FC<SocialIconProps& { className?: string }> = ({
+// ✅ SocialIcon component with hover effect and dark/light mode swap
+const SocialIcon: React.FC<SocialIconProps> = ({
   darkMode,
   lightImg,
   lightHover,
@@ -42,62 +45,61 @@ const SocialIcon: React.FC<SocialIconProps& { className?: string }> = ({
     : lightImg;
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={`m-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] hover:scale-110 ${className || ""}`}
+    <div
+      className={`p-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] hover:scale-110 flex items-center justify-center ${
+        className || ""
+      }`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-    />
+    >
+      <img src={src} alt={alt} className="w-6 h-6 pointer-events-none" />
+    </div>
   );
 };
 
 const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
   const navLinkClass =
-    "py-2 xl:px-0 hover:text-white hover:bg-[#231212] rounded w-max";
-  const linkClass =
-    "hover:underline text-[#98A1B4] text-xs block opacity-50 mx-2 font-ibm-plex-mono dark:text-[#FFFFFF] text-[#98A1B4]";
-
+    "py-2 xl:px-0 hover:text-white hover:bg-[#231212] rounded w-max transition-all duration-200";
   return (
     <div className={darkMode ? "dark" : ""}>
       {/* Footer Top */}
-      <div className="w-full bg-[#FFFFFF] dark:bg-[#101011] px-5">
+      <div className="w-full bg-[#FFFFFF] dark:bg-black px-5">
         <div className="xl:mx-8 flex flex-col xl:flex-row justify-between items-stretch">
           {/* Navigation Links */}
-          <div className="font-ibm-plex-mono dark:text-[#FFFFFF] text-#000001 flex flex-col xl:flex-row font-medium m-2">
+          <div className="font-ibm-plex-mono dark:text-[#FFFFFF] text-black flex flex-col xl:flex-row font-medium m-2">
             {/* First Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
               <a href="#" className={navLinkClass}>
                 Home
               </a>
-              <a href="#" className={navLinkClass}>
+              <a href="/services" className={navLinkClass}>
                 Services
               </a>
-              <a href="#" className={navLinkClass}>
+              <a href="/how-it-works" className={navLinkClass}>
                 How it works
               </a>
             </div>
             {/* Second Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
-              <a href="#" className={navLinkClass}>
+              <a href="contact" className={navLinkClass}>
                 Contact Us
               </a>
-              <a href="#" className={navLinkClass}>
+              <a href="pricing" className={navLinkClass}>
                 Pricing
               </a>
-              <a href="#" className={navLinkClass}>
+              <a href="" className={navLinkClass}>
                 Sign In
               </a>
             </div>
             {/* Third Column */}
             <div className="flex flex-col p-1 m-0 xl:m-4">
-              <a href="#" className={navLinkClass}>
+              <a href="/about" className={navLinkClass}>
                 About Us
               </a>
             </div>
           </div>
 
-          {/* Right Section: Dark Mode + Social Icons */}
+          {/* Right Section: Dark Mode Toggle + Social Icons */}
           <div className="flex flex-col justify-start xl:justify-between items-start xl:items-end mx-0 xl:m-2 gap-y-6">
             {/* Dark Mode Toggle */}
             <button
@@ -124,19 +126,26 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
 
             {/* Social Icons */}
             <div className="m-2 flex flex-col">
-              <div className="flex flex-row xl:justify-end gap-x-4">
-                <div className="hover:bg-[#231212] rounded">
+              <div className="flex xl:justify-end gap-x-4">
+                <a
+                  href="https://www.instagram.com/gofixify/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SocialIcon
                     darkMode={darkMode}
-                    lightImg={dtt}
-                    lightHover={wtt} // use hover variant if you have
-                    darkImg={wtt}
-                    darkHover={wtt}
-                    alt="TikTok"
-                    className="w-6 h-6" 
+                    lightImg={di}
+                    lightHover={wi}
+                    darkImg={wi}
+                    darkHover={wi}
+                    alt="Instagram"
                   />
-                </div>
-                <div className="hover:bg-[#231212] rounded">
+                </a>
+                <a
+                  href="https://discord.com/users/1441059991518842951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SocialIcon
                     darkMode={darkMode}
                     lightImg={dd}
@@ -144,10 +153,13 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                     darkImg={wd}
                     darkHover={wd}
                     alt="Discord"
-                    className="w-6 h-6" 
                   />
-                </div>
-                <div className="hover:bg-[#231212] rounded">
+                </a>
+                <a
+                  href="https://www.youtube.com/@FixifySupport"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SocialIcon
                     darkMode={darkMode}
                     lightImg={dyt}
@@ -155,12 +167,11 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                     darkImg={wyt}
                     darkHover={wyt}
                     alt="YouTube"
-                    className="w-6 h-6" 
                   />
-                </div>
+                </a>
               </div>
 
-              {/* Social Text */}
+              {/* Footer tagline */}
               <div className="font-ibm-plex-mono dark:text-[#FFFFFF] text-[#000000] text-base leading-[32px] font-normal opacity-50 break-words whitespace-normal m-2 p-0">
                 Fix it fast with Fixify.
               </div>
@@ -168,7 +179,7 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
           </div>
         </div>
 
-        {/* Disclaimer + Links */}
+        {/* Disclaimer + Footer Links */}
         <div className="mx-0 xl:mx-10 flex flex-col xl:flex-row justify-between items-start gap-y-4">
           <div className="text-[#250843] mx-4 xl:mx-6">
             <p className="text-sm font-ibm-plex-mono dark:text-[#FFFFFF] text-[#250843]">
@@ -177,18 +188,19 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
           </div>
 
           <div className="flex flex-row justify-between items-start mx-2 gap-y-4 mb-6 xl:mb-0">
-            <a href="#" className={linkClass}>
+            <Link to="/privacy-policy" className="hover:underline text-[#98A1B4] text-xs block opacity-50 mx-2 font-ibm-plex-mono dark:text-[#FFFFFF]">
               Privacy Policy
-            </a>
-            <a href="#" className={linkClass}>
+            </Link>
+
+            <Link to="/terms" className="hover:underline text-[#98A1B4] text-xs block opacity-50 mx-2 font-ibm-plex-mono dark:text-[#FFFFFF]">
               Terms & Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Footer Hero / Logo Section */}
-      <div className="overflow-hidden bg-[#FFFFFF] dark:bg-[#101011]">
+      <div className="overflow-hidden bg-[#FFFFFF] dark:bg-black">
         <h1 className="tracking-tight font-jersey dark:text-[#FFFFFF] text-[#0F0F0F]  xl:text-[130px] text-[91.03px] text-center xl:leading-[180.24px] leading-[56.9px]">
           Fixify A Service Marketplace
         </h1>

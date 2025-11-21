@@ -65,7 +65,7 @@ const Hero = () => {
   return (
     <div
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col text-white"
-      style={{ backgroundImage: "url('/Fixify_images/headerbg.jpg')" }}
+      style={{ backgroundImage: "url('/Fixify_images/herobg.png')" }}
     >
       <div className="flex flex-col p-30">
         {/* Hero Heading */}

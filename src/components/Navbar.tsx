@@ -3,13 +3,13 @@ import logo from "/Fixify_images/fixifylogo.jpg";
 import wdd from "/Fixify_images/dropdown.jpg";
 
 // 🟢 Light mode icons
-import wtt from "/Fixify_images/tiktokicon.jpg";
+import wi from "/Fixify_images/winstagram.jpg";
 import wyt from "/Fixify_images/youtubeicon.jpg";
 import wd from "/Fixify_images/discordicon.jpg";
 import wdm from "/Fixify_images/wdarkmodeicon.jpg";
 
 // ⚫ Dark mode icons
-import dtt from "/Fixify_images/dtiktok.jpg";
+import di from "/Fixify_images/dinstagram.jpg";
 import dyt from "/Fixify_images/dyoutube.jpg";
 import dd from "/Fixify_images/ddiscord.jpg";
 import ddm from "/Fixify_images/ddarkmodeicon.jpg";
@@ -34,7 +34,6 @@ interface SocialIconProps {
   onClick?: () => void;
 }
 
-// ✅ SocialIcon component (handles hover area correctly)
 const SocialIcon: React.FC<SocialIconProps> = ({
   darkMode,
   lightImg,
@@ -85,7 +84,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               { name: "Home", href: "/" },
               { name: "Services", href: "/services" },
               { name: "How it works", href: "/how-it-works" },
-              { name: "Testimonials", href: "/testimonials" },
+              { name: "About Us", href: "/about" },
               { name: "Contact Us", href: "/contact" },
               { name: "Pricing", href: "/pricing" },
             ].map((item, index) => (
@@ -112,14 +111,25 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
           <div className="flex justify-between p-4 m-4">
             {/* Social Icons */}
             <div className="flex">
+              <a
+                  href="https://www.instagram.com/gofixify/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
               <SocialIcon
                 darkMode={darkMode}
-                lightImg={dtt}
-                lightHover={wtt}
-                darkImg={wtt}
-                darkHover={wtt}
-                alt="TikTok"
+                lightImg={di}
+                lightHover={wi}
+                darkImg={wi}
+                darkHover={wi}
+                alt="Instagram"
               />
+              </a>
+               <a
+                  href="https://www.youtube.com/@FixifySupport"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
               <SocialIcon
                 darkMode={darkMode}
                 lightImg={dyt}
@@ -128,6 +138,12 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 darkHover={wyt}
                 alt="YouTube"
               />
+              </a>
+              <a
+                  href="https://discord.com/users/1441059991518842951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
               <SocialIcon
                 darkMode={darkMode}
                 lightImg={dd}
@@ -136,6 +152,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 darkHover={wd}
                 alt="Discord"
               />
+              </a>
               {/* Dark Mode Toggle */}
               <SocialIcon
                 darkMode={darkMode}
