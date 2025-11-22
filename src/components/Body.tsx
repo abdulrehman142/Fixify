@@ -58,13 +58,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={eimage} alt="Electrician" className="w-52" />
+                    <img src={eimage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -74,6 +74,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? de : we}
                         alt="Electrician"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
@@ -98,13 +99,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={pimage} alt="Electrician" className="w-52" />
+                    <img src={pimage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -114,6 +115,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? dp : wp}
                         alt="Plumber"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
@@ -138,13 +140,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={cimage} alt="Electrician" className="w-52" />
+                    <img src={cimage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -154,6 +156,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? dc : wc}
                         alt="Cleaner"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
@@ -178,13 +181,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={gimage} alt="Electrician" className="w-52" />
+                    <img src={gimage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -194,6 +197,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? dg : wg}
                         alt="Gardener"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
@@ -218,13 +222,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={mimage} alt="Electrician" className="w-52" />
+                    <img src={mimage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -234,6 +238,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? dm : wm}
                         alt="Mechanic"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
@@ -258,13 +263,13 @@ const Body = ({ darkMode }: BodyProps) => {
               <div className="flex flex-col h-max">
                 <div className="flex mt-4 p-2">
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wl : dl} alt="left" />
+                    <img src={darkMode ? wl : dl} alt="left" loading="lazy" />
                   </div>
                   <div>
-                    <img src={timage} alt="Electrician" className="w-52" />
+                    <img src={timage} alt="Electrician" className="w-52" loading="lazy" />
                   </div>
                   <div className="py-8 px-2">
-                    <img src={darkMode ? wr : dr} alt="right" />
+                    <img src={darkMode ? wr : dr} alt="right" loading="lazy" />
                   </div>
                 </div>
                 <div className="flex flex-col mx-4 items-center justify-center ">
@@ -274,6 +279,7 @@ const Body = ({ darkMode }: BodyProps) => {
                         src={darkMode ? dt : wt}
                         alt="Technician"
                         className="h-7 w-7"
+                        loading="lazy"
                       />
                     </div>
                     <div className="px-2 text-black dark:text-white text-center font-ibm-plex-mono font-medium text-sm">
