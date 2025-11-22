@@ -14,6 +14,7 @@ const TermsAndConditions = () => {
           src={tc}
           alt="Banner"
           className="h-70 w-70"
+          loading="lazy"
         />
       </div>
       <div className="p-6">
