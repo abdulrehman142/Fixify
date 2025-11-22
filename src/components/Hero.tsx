@@ -37,17 +37,10 @@ const Hero = () => {
             ? "bg-[#231212] dark:bg-black"
             : "bg-white dark:bg-white"
         }`}
-        onClick={() => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.focus();
-            if (el.innerText === placeholder) el.innerText = "";
-          }
-        }}
       >
         <div
           id={id}
-          className={`font-ibm-plex-mono p-2 m-2 text-base outline-none transition-all duration-200 ${
+          className={`font-ibm-plex-mono p-2 m-2 text-base outline-none transition-all duration-200 focus:outline-none ${
             isFocused === id
               ? "text-white dark:text-white"
               : text === ""
@@ -56,15 +49,35 @@ const Hero = () => {
           }`}
           contentEditable
           suppressContentEditableWarning
-          onFocus={() => setIsFocused(id)}
+          onFocus={() => {
+            setIsFocused(id);
+            const el = document.getElementById(id);
+            if (el && el.innerText === placeholder) {
+              el.innerText = "";
+              setText("");
+            }
+          }}
           onBlur={(e) => {
-            if (isFocused === id) setIsFocused(null);
+            setIsFocused(null);
             // Restore placeholder if empty
             if (e.currentTarget.innerText.trim() === "") {
               e.currentTarget.innerText = placeholder;
-              setText(""); // clear state
+              setText("");
             } else {
-              setText(e.currentTarget.innerText); // update state with user text
+              setText(e.currentTarget.innerText);
+            }
+          }}
+          onClick={(e) => {
+            const el = e.currentTarget;
+            if (el.innerText === placeholder) {
+              el.innerText = "";
+              setText("");
+            }
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSend();
             }
           }}
         >
@@ -124,9 +137,9 @@ const Hero = () => {
             <img src={carpenterServiceImg} alt="carpenter" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Carpenterr</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={electricianServiceImg} alt="electrician" className="w-5 h-5" loading="lazy" />
-            <button className="text-white text-sm">Electrician</button>
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-0 rounded items-center transition-all duration-200">
+            <img src={electricianServiceImg} alt="electrician" className="w-8 h-8" loading="lazy" />
+            <button className="text-white text-center text-sm pr-3">Electrician</button>
           </div>
           <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
             <img src={mechanicServiceImg} alt="mechanic" className="w-5 h-5" loading="lazy" />

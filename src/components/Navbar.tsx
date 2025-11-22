@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fixifyLogo from "/Fixify_images/fixifylogo.png";
 import dropdownArrowLight from "/Fixify_images/dropdown.png";
 
@@ -75,6 +75,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 };
 
 const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
+  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -218,18 +219,24 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         </div>
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
-          <div className="flex items-center bg-[#231212] rounded ">
+          <div className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded ">
             <img src={registerIcon} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+            <button 
+              onClick={() => navigate("/register")}
+              className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all"
+            >
               Register
             </button>
           </div>
-          <div className="flex items-center bg-[#231212] rounded ">
+          <div className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded ">
             <img src={loginIcon} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+            <button 
+              onClick={() => navigate("/login")}
+              className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all"
+            >
               Login
-            </span>
-          </Link>
+            </button>
+          </div>
         </div>
       </div>
     </div>

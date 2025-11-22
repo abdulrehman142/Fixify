@@ -44,9 +44,9 @@ const Register: React.FC = () => {
   return (
     <div className="relative min-h-screen flex items-center bg-[url('/Fixify_images/herobg.png')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-black/55" />
-      <div className="w-full py-20 relative z-10">
-        <div className="max-w-md mx-auto p-6 bg-white/95 dark:bg-[#0b0b0b]/95 rounded shadow">
-          <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">
+      <div className="w-full py-10 relative z-10">
+        <div className="max-w-md mx-auto p-6 bg-[#231212] dark:bg-black rounded-4xl shadow">
+          <h2 className="text-2xl font-semibold mb-4 text-white dark:text-white">
             Create an account
           </h2>
 
@@ -61,63 +61,64 @@ const Register: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <label className="block mb-2 text-sm text-gray-700 dark:text-gray-300">
+              <label className="block mb-2 text-sm text-white dark:white">
                 Full name
               </label>
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full mb-3 p-2 rounded border bg-transparent text-black dark:text-white"
+                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Jane Doe"
                 required
               />
 
-              <label className="block mb-2 text-sm text-gray-700 dark:text-gray-300">
+              <label className="block mb-2 text-sm text-white dark:text-white">
                 Email
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full mb-3 p-2 rounded border bg-transparent text-black dark:text-white"
+                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="you@example.com"
                 required
               />
 
-              <label className="block mb-2 text-sm text-gray-700 dark:text-gray-300">
+              <label className="block mb-2 text-sm text-white dark:text-white">
                 Password
               </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full mb-3 p-2 rounded border bg-transparent text-black dark:text-white"
+                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Enter a password"
                 required
               />
 
-              <label className="block mb-2 text-sm text-gray-700 dark:text-gray-300">
+              <label className="block mb-2 text-sm text-white dark:black">
                 Confirm password
               </label>
               <input
                 type="password"
                 value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
-                className="w-full mb-4 p-2 rounded border bg-transparent text-black dark:text-white"
+                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Repeat your password"
                 required
               />
-
+<div className="items-center justify-center flex">
               <button
-                className="w-full bg-[#231212] text-white p-2 rounded"
+                className="bg-white dark:bg-[#231212] dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800  hover:text-white text-black p-2 px-4 m-2 rounded"
                 type="submit"
               >
                 Register
               </button>
+              </div>
             </form>
           )}
 
-          <div className="mt-4 text-sm text-gray-600 dark:text-gray-300">
+          <div className="mt-4 text-sm text-white dark:white">
             Already have an account?{" "}
             <Link to="/login" className="underline">
               Login
