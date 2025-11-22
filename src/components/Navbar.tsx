@@ -64,7 +64,12 @@ const SocialIcon: React.FC<SocialIconProps> = ({
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
     >
-      <img src={src} alt={alt} className="w-5 h-5 pointer-events-none" loading="lazy" />
+      <img
+        src={src}
+        alt={alt}
+        className="w-5 h-5 pointer-events-none"
+        loading="lazy"
+      />
     </div>
   );
 };
@@ -223,8 +228,8 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             <img src={loginIcon} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
             <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Login
-            </button>
-          </div>
+            </span>
+          </Link>
         </div>
       </div>
     </div>

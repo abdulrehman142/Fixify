@@ -3,12 +3,14 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import ContactUs from "./pages/ContactUs"; 
+import ContactUs from "./pages/ContactUs";
 import Services from "./pages/Services";
 import HowitWorks from "./pages/HowitWorks";
 import FAQs from "./pages/FAQs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/Terms&Conditions";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./pages/AboutUs";
@@ -32,6 +34,8 @@ const App = () => {
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsConditions />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/about" element={<AboutUs />} />
           </Routes>
         </Layout>
