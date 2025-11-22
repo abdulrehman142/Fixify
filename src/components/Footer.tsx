@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import wd from "/Fixify_images/discordicon.jpg";
-import wi from "/Fixify_images/winstagram.jpg";
-import wyt from "/Fixify_images/youtubeicon.jpg";
-import dd from "/Fixify_images/ddiscord.jpg";
-import di from "/Fixify_images/dinstagram.jpg";
-import dyt from "/Fixify_images/dyoutube.jpg";
-import sun from "/Fixify_images/sun.jpg";
-import moon from "/Fixify_images/moon.jpg";
+import discordIconLight from "/Fixify_images/discordicon.png";
+import instagramWhite from "/Fixify_images/winstagram.png";
+import youtubeWhite from "/Fixify_images/youtubeicon.png";
+import discordDark from "/Fixify_images/ddiscord.png";
+import instagramDark from "/Fixify_images/dinstagram.png";
+import youtubeDark from "/Fixify_images/dyoutube.png";
+import sunIcon from "/Fixify_images/sun.png";
+import moonIcon from "/Fixify_images/moon.jpg";
 
 interface FooterProps {
   darkMode: boolean;
@@ -46,7 +46,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
   return (
     <div
-      className={`p-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] hover:scale-110 flex items-center justify-center ${
+      className={`p-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] dark:hover:bg-gray-800 hover:scale-110 flex items-center justify-center ${
         className || ""
       }`}
       onMouseEnter={() => setHovered(true)}
@@ -59,7 +59,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
 const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
   const navLinkClass =
-    "py-2 xl:px-0 hover:text-white hover:bg-[#231212] rounded w-max transition-all duration-200";
+    "py-2 xl:px-0 hover:text-white hover:bg-[#231212] dark:hover:bg-gray-800 rounded w-max transition-all duration-200";
   return (
     <div className={darkMode ? "dark" : ""}>
       {/* Footer Top */}
@@ -85,7 +85,7 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 Contact Us
               </Link>
               <Link to="/pricing" className={navLinkClass}>
-                Pricing
+                FAQs
               </Link>
               <Link to="/signin" className={navLinkClass}>
                 Sign In
@@ -116,7 +116,7 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 }`}
               ></div>
               <img
-                src={darkMode ? sun : moon}
+                src={darkMode ? sunIcon : moonIcon}
                 alt="Mode Icon"
                 className={`absolute w-3 h-3 top-1/2 transform -translate-y-1/2 ${
                   darkMode ? "left-1" : "right-1"
@@ -135,10 +135,10 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 >
                   <SocialIcon
                     darkMode={darkMode}
-                    lightImg={di}
-                    lightHover={wi}
-                    darkImg={wi}
-                    darkHover={wi}
+                    lightImg={instagramDark}
+                    lightHover={instagramWhite}
+                    darkImg={instagramWhite}
+                    darkHover={instagramWhite}
                     alt="Instagram"
                   />
                 </a>
@@ -149,10 +149,10 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 >
                   <SocialIcon
                     darkMode={darkMode}
-                    lightImg={dd}
-                    lightHover={wd}
-                    darkImg={wd}
-                    darkHover={wd}
+                    lightImg={discordDark}
+                    lightHover={discordIconLight}
+                    darkImg={discordIconLight}
+                    darkHover={discordIconLight}
                     alt="Discord"
                   />
                 </a>
@@ -163,10 +163,10 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 >
                   <SocialIcon
                     darkMode={darkMode}
-                    lightImg={dyt}
-                    lightHover={wyt}
-                    darkImg={wyt}
-                    darkHover={wyt}
+                    lightImg={youtubeDark}
+                    lightHover={youtubeWhite}
+                    darkImg={youtubeWhite}
+                    darkHover={youtubeWhite}
                     alt="YouTube"
                   />
                 </a>
