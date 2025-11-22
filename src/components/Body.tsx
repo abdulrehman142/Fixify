@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import eimage from "/Fixify_images/electrician.jpg";
 import pimage from "/Fixify_images/plumber.jpg";
 import cimage from "/Fixify_images/cleaner.jpg";
@@ -27,11 +27,21 @@ interface BodyProps {
 }
 
 const Body = ({ darkMode }: BodyProps) => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/Fixify_images/bodybg.jpg";
+    img.onload = () => setBgLoaded(true);
+  }, []);
   return (
     <div className={darkMode ? "dark" : ""}>
       <div
-        className="h-screen bg-cover bg-center flex  text-white"
-        style={{ backgroundImage: "url('/Fixify_images/bodybg.jpg')" }}
+        className="h-screen bg-cover bg-center flex text-white transition-all duration-500"
+        style={{ 
+          backgroundImage: bgLoaded ? "url('/Fixify_images/bodybg.jpg')" : "none",
+          backgroundColor: "#1a1a1a"
+        }}
       >
         <div className="flex flex-col">
           <div className="flex justify-between">
