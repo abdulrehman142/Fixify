@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import si from "/Fixify_images/searchicon.jpg";
-import cleanerImg from "/Fixify_images/cleaner.png";
-import electricianImg from "/Fixify_images/electrician.svg";
-import plumberImg from "/Fixify_images/plumber.svg";
-import mechanicImg from "/Fixify_images/mechanic.png";
-import painterImg from "/Fixify_images/painter.svg";
-import carpenterImg from "/Fixify_images/carpenter.svg";
-import load from "/Fixify_images/loading.png";
+import searchIcon from "/Fixify_images/searchicon.png";
+import cleanerServiceImg from "/Fixify_images/cleaner.png";
+import electricianServiceImg from "/Fixify_images/electrician.svg";
+import plumberServiceImg from "/Fixify_images/plumber.svg";
+import mechanicServiceImg from "/Fixify_images/mechanic.png";
+import painterServiceImg from "/Fixify_images/painter.svg";
+import carpenterServiceImg from "/Fixify_images/carpenter.svg";
+import loadMoreIcon from "/Fixify_images/loading.png";
 
 const Hero = () => {
   const [search, setSearch] = useState("Search for any service...");
@@ -104,36 +104,36 @@ const Hero = () => {
             onClick={handleSend}
             className="p-2 m-2 bg-black text-white font-ibm-plex-mono rounded-2xl hover:opacity-80 transition-all duration-200"
           >
-            <img src={si} alt="search" className="h-6 w-6" loading="lazy" />
+            <img src={searchIcon} alt="search" className="h-6 w-6" loading="lazy" />
           </button>
         </div>
         <div className="font-ibm-plex-mono flex gap-2 p-2 m-2 flex-wrap">
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={cleanerImg} alt="cleaner" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={cleanerServiceImg} alt="cleaner" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Cleaner</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={plumberImg} alt="plumber" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={plumberServiceImg} alt="plumber" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Plumber</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={painterImg} alt="painter" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={painterServiceImg} alt="painter" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Painter</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={carpenterImg} alt="carpenter" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={carpenterServiceImg} alt="carpenter" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Carpenterr</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={electricianImg} alt="electrician" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={electricianServiceImg} alt="electrician" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Electrician</button>
           </div>
-          <div className="flex bg-[#231212] hover:bg-[#422727] dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
-            <img src={mechanicImg} alt="mechanic" className="w-5 h-5" loading="lazy" />
+          <div className="flex bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 dark:bg-black p-3 rounded items-center gap-1 transition-all duration-200">
+            <img src={mechanicServiceImg} alt="mechanic" className="w-5 h-5" loading="lazy" />
             <button className="text-white text-sm">Mechanic</button>
           </div>
-          <div className="flex items-center bg-[#231212] dark:bg-black rounded hover:bg-[#422727] ">
-            <img src={load} alt="load" className="w-6 h-5 pl-1" loading="lazy" />
+          <div className="flex items-center bg-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727] ">
+            <img src={loadMoreIcon} alt="load" className="w-6 h-5 pl-1" loading="lazy" />
             <button 
             onClick={() => navigate("/services")}
             className="text-white pl-2 p-3 transition-all duration-200 text-sm"

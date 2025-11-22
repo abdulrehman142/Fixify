@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Services from "./pages/Services";
 import HowitWorks from "./pages/HowitWorks";
-import Pricing from "./pages/Pricing";
+import FAQs from "./pages/FAQs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/Terms&Conditions";
 import Login from "./pages/Login";
@@ -28,10 +28,10 @@ const App = () => {
               path="/"
               element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
             />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services" element={<Services darkMode={darkMode} />} />
             <Route path="/how-it-works" element={<HowitWorks />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faqs" element={<FAQs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsConditions />} />
             <Route path="/login" element={<Login />} />

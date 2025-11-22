@@ -1,27 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "/Fixify_images/fixifylogo.jpg";
-import wdd from "/Fixify_images/dropdown.jpg";
+import fixifyLogo from "/Fixify_images/fixifylogo.png";
+import dropdownArrowLight from "/Fixify_images/dropdown.png";
 
-// 🟢 Light mode icons
-import wi from "/Fixify_images/winstagram.jpg";
-import wyt from "/Fixify_images/youtubeicon.jpg";
-import wd from "/Fixify_images/discordicon.jpg";
-import wdm from "/Fixify_images/wdarkmodeicon.jpg";
+// 🟢 Light mode social icons
+import instagramWhite from "/Fixify_images/winstagram.png";
+import youtubeWhite from "/Fixify_images/youtubeicon.png";
+import discordWhite from "/Fixify_images/discordicon.png";
+import darkModeIconWhite from "/Fixify_images/wdarkmodeicon.jpg";
 
-// ⚫ Dark mode icons
-import di from "/Fixify_images/dinstagram.jpg";
-import dyt from "/Fixify_images/dyoutube.jpg";
-import dd from "/Fixify_images/ddiscord.jpg";
-import ddm from "/Fixify_images/ddarkmodeicon.jpg";
-import ddd from "/Fixify_images/ddropdown.jpg";
+// ⚫ Dark mode social icons
+import instagramDark from "/Fixify_images/dinstagram.png";
+import youtubeDark from "/Fixify_images/dyoutube.png";
+import discordDark from "/Fixify_images/ddiscord.png";
+import darkModeIconDark from "/Fixify_images/ddarkmodeicon.png";
+import dropdownArrowDark from "/Fixify_images/ddropdown.png";
 // 🌙 Moon icon for hover state
-import wmoon from "/Fixify_images/wmoon.jpg";
+import moonHoverIcon from "/Fixify_images/wmoon.png";
 
 import "../index.css";
 import Dropdown from "../components/Dropdown";
-import register from "/Fixify_images/register.png";
-import login from "/Fixify_images/login.png";
+import registerIcon from "/Fixify_images/register.png";
+import loginIcon from "/Fixify_images/login.png";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -59,7 +59,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
   return (
     <div
-      className="p-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] hover:scale-110 flex items-center justify-center"
+      className="p-2 rounded cursor-pointer transition-all duration-300 hover:bg-[#231212] dark:hover:bg-gray-800 hover:scale-110 flex items-center justify-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
@@ -99,12 +99,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         {/* 🟢 Left: Logo + Brand */}
         <div className="flex">
           <div className="flex items-center p-2">
-            <img
-              src={logo}
-              alt="Fixify Logo"
-              className="h-6 w-6"
-              loading="lazy"
-            />
+            <img src={fixifyLogo} alt="Fixify Logo" className="h-6 w-6" loading="lazy" />
             <div className="font-jersey dark:text-white text-black text-2xl ml-1">
               Fixify
             </div>
@@ -118,7 +113,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               { name: "How it works", href: "/how-it-works" },
               { name: "About Us", href: "/about" },
               { name: "Contact Us", href: "/contact" },
-              { name: "Pricing", href: "/pricing" },
+              { name: "FAQs", href: "/faqs" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -128,12 +123,12 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 {item.name === "Services" ? (
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap cursor-pointer"
+                    className="group flex items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap cursor-pointer"
                   >
                     <span className="flex items-center group-hover:text-white">
                       {item.name}
                       <img
-                        src={darkMode ? wdd : ddd}
+                        src={darkMode ? dropdownArrowLight : dropdownArrowDark}
                         alt="Dropdown"
                         className={`h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200 ${
                           isDropdownOpen ? "rotate-180" : ""
@@ -145,7 +140,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="group flex items-center justify-center hover:bg-[#231212] rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap"
+                    className="group flex items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 rounded p-2 m-2 font-ibm-plex-mono font-medium text-sm dark:text-white text-black transition-all duration-200 whitespace-nowrap"
                   >
                     <span className="flex items-center group-hover:text-white">
                       {item.name}
@@ -173,10 +168,10 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               >
                 <SocialIcon
                   darkMode={darkMode}
-                  lightImg={di}
-                  lightHover={wi}
-                  darkImg={wi}
-                  darkHover={wi}
+                  lightImg={instagramDark}
+                  lightHover={instagramWhite}
+                  darkImg={instagramWhite}
+                  darkHover={instagramWhite}
                   alt="Instagram"
                 />
               </a>
@@ -187,10 +182,10 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               >
                 <SocialIcon
                   darkMode={darkMode}
-                  lightImg={dyt}
-                  lightHover={wyt}
-                  darkImg={wyt}
-                  darkHover={wyt}
+                  lightImg={youtubeDark}
+                  lightHover={youtubeWhite}
+                  darkImg={youtubeWhite}
+                  darkHover={youtubeWhite}
                   alt="YouTube"
                 />
               </a>
@@ -201,20 +196,20 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               >
                 <SocialIcon
                   darkMode={darkMode}
-                  lightImg={dd}
-                  lightHover={wd}
-                  darkImg={wd}
-                  darkHover={wd}
+                  lightImg={discordDark}
+                  lightHover={discordWhite}
+                  darkImg={discordWhite}
+                  darkHover={discordWhite}
                   alt="Discord"
                 />
               </a>
               {/* Dark Mode Toggle */}
               <SocialIcon
                 darkMode={darkMode}
-                lightImg={ddm}
-                lightHover={wmoon}
-                darkImg={wdm}
-                darkHover={wdm}
+                lightImg={darkModeIconDark}
+                lightHover={moonHoverIcon}
+                darkImg={darkModeIconWhite}
+                darkHover={darkModeIconWhite}
                 alt="Toggle Dark Mode"
                 onClick={() => setDarkMode(!darkMode)}
               />
@@ -223,28 +218,15 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         </div>
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
-          <Link
-            to="/register"
-            className="flex items-center bg-[#231212] rounded"
-          >
-            <img
-              src={register}
-              alt="register"
-              className="pl-1 h-5 w-6"
-              loading="lazy"
-            />
-            <span className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+          <div className="flex items-center bg-[#231212] rounded ">
+            <img src={registerIcon} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
+            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Register
-            </span>
-          </Link>
-          <Link to="/login" className="flex items-center bg-[#231212] rounded">
-            <img
-              src={login}
-              alt="login"
-              className="pl-1 h-5 w-6"
-              loading="lazy"
-            />
-            <span className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+            </button>
+          </div>
+          <div className="flex items-center bg-[#231212] rounded ">
+            <img src={loginIcon} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
+            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Login
             </span>
           </Link>
