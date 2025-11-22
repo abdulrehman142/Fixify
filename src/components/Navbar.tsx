@@ -64,7 +64,12 @@ const SocialIcon: React.FC<SocialIconProps> = ({
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
     >
-      <img src={src} alt={alt} className="w-5 h-5 pointer-events-none" loading="lazy" />
+      <img
+        src={src}
+        alt={alt}
+        className="w-5 h-5 pointer-events-none"
+        loading="lazy"
+      />
     </div>
   );
 };
@@ -94,7 +99,12 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         {/* 🟢 Left: Logo + Brand */}
         <div className="flex">
           <div className="flex items-center p-2">
-            <img src={logo} alt="Fixify Logo" className="h-6 w-6" loading="lazy" />
+            <img
+              src={logo}
+              alt="Fixify Logo"
+              className="h-6 w-6"
+              loading="lazy"
+            />
             <div className="font-jersey dark:text-white text-black text-2xl ml-1">
               Fixify
             </div>
@@ -213,18 +223,31 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         </div>
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
-          <div className="flex items-center bg-[#231212] rounded ">
-            <img src={register} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+          <Link
+            to="/register"
+            className="flex items-center bg-[#231212] rounded"
+          >
+            <img
+              src={register}
+              alt="register"
+              className="pl-1 h-5 w-6"
+              loading="lazy"
+            />
+            <span className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Register
-            </button>
-          </div>
-          <div className="flex items-center bg-[#231212] rounded ">
-            <img src={login} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+            </span>
+          </Link>
+          <Link to="/login" className="flex items-center bg-[#231212] rounded">
+            <img
+              src={login}
+              alt="login"
+              className="pl-1 h-5 w-6"
+              loading="lazy"
+            />
+            <span className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Login
-            </button>
-          </div>
+            </span>
+          </Link>
         </div>
       </div>
     </div>
