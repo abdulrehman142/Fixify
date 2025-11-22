@@ -41,7 +41,7 @@ const Dropdown = ({ darkMode }: DropdownProps) => {
               : "bg-white hover:bg-[#422727] text-black hover:text-white"
           }`}
         >
-          <img src={service.img} alt={service.name} className="w-6 h-6 object-cover rounded flex-shrink-0" />
+          <img src={service.img} alt={service.name} className="w-6 h-6 object-cover rounded flex-shrink-0" loading="lazy" />
           <div className="font-ibm-plex-mono text-sm truncate">
             {service.name}
           </div>

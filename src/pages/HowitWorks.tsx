@@ -13,7 +13,7 @@ const HowitWorks = () => {
             efficiently.
           </p>
         </div>
-        <img src={tc} alt="Banner" className="h-70 w-70" />
+        <img src={tc} alt="Banner" className="h-70 w-70" loading="lazy" />
       </div>
       <div className="flex flex-col items-center">
         <div className="flex flex-col w-100 p-2 m-2 items-center">

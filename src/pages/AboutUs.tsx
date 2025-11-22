@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div className="font-sans leading-relaxed">
       {/* Big Yellow Box */}
       <div className="p-6">
-        <img src={au} alt="About Us Banner" className="" />
+        <img src={au} alt="About Us Banner" className="" loading="lazy" />
       </div>
       <div className="p-6 dark:bg-black dark:text-white">
         <h1 className="text-3xl font-bold mb-6">Who is Fixify?</h1>
@@ -104,7 +104,7 @@ const AboutUs = () => {
       <div className="flex justify-between p-6 dark:bg-black bg-white">
         <div className="flex flex-col items-center w-70 h-70 bg-[#f4f4f5] rounded-2xl">
           <div className="mt-4">
-            <img src={vt} alt="Verified Tech" className="" />
+            <img src={vt} alt="Verified Tech" className="" loading="lazy" />
           </div>
           <div className="mt-2 font-bold text-2xl">Verified Technicians</div>
           <div className="text-center text-[#94a2b3] p-4">
@@ -114,7 +114,7 @@ const AboutUs = () => {
         </div>
         <div className="flex flex-col items-center w-70 h-70 bg-[#f4f4f5] rounded-2xl">
           <div className="mt-4">
-            <img src={ss} alt="Supervised service" className="" />
+            <img src={ss} alt="Supervised service" className="" loading="lazy" />
           </div>
           <div className="mt-2 font-bold text-2xl">Supervised Services</div>
           <div className="text-center text-[#94a2b3] p-4">
@@ -123,7 +123,7 @@ const AboutUs = () => {
         </div>
         <div className="flex flex-col items-center w-70 h-70 bg-[#f4f4f5] rounded-2xl">
           <div className="mt-4">
-            <img src={as} alt="Trustworthy" className="" />
+            <img src={as} alt="Trustworthy" className="" loading="lazy" />
           </div>
           <div className="mt-2 font-bold text-2xl">Trustworthy Services</div>
           <div className="text-center text-[#94a2b3] p-4">
@@ -132,7 +132,7 @@ const AboutUs = () => {
         </div>
         <div className="flex flex-col items-center w-70 h-70 bg-[#f4f4f5] rounded-2xl">
           <div className="mt-4">
-            <img src={ts} alt="Affordable" className="" />
+            <img src={ts} alt="Affordable" className="" loading="lazy" />
           </div>
           <div className="mt-2 font-bold text-2xl">Affordable Services</div>
           <div className="text-center text-[#94a2b3] p-4">

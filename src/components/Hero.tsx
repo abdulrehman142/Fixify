@@ -104,7 +104,7 @@ const Hero = () => {
             onClick={handleSend}
             className="p-2 m-2 bg-black text-white font-ibm-plex-mono rounded-2xl hover:opacity-80 transition-all duration-200"
           >
-            <img src={si} alt="search" className="h-6 w-6" />
+            <img src={si} alt="search" className="h-6 w-6" loading="lazy" />
           </button>
         </div>
         <div className="font-ibm-plex-mono flex gap-2 p-2 m-2 flex-wrap">
