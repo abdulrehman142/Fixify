@@ -42,8 +42,9 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center bg-[url('/Fixify_images/herobg.png')] bg-cover bg-center bg-no-repeat">
-      <div className="w-full py-20 bg-black/55">
+    <div className="relative min-h-screen flex items-center bg-[url('/Fixify_images/herobg.png')] bg-cover bg-center bg-no-repeat">
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="w-full py-20 relative z-10">
         <div className="max-w-md mx-auto p-6 bg-white/95 dark:bg-[#0b0b0b]/95 rounded shadow">
           <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">
             Create an account
