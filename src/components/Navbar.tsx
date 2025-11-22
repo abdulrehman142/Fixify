@@ -64,7 +64,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
     >
-      <img src={src} alt={alt} className="w-5 h-5 pointer-events-none" />
+      <img src={src} alt={alt} className="w-5 h-5 pointer-events-none" loading="lazy" />
     </div>
   );
 };
@@ -94,7 +94,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         {/* 🟢 Left: Logo + Brand */}
         <div className="flex">
           <div className="flex items-center p-2">
-            <img src={logo} alt="Fixify Logo" className="h-6 w-6" />
+            <img src={logo} alt="Fixify Logo" className="h-6 w-6" loading="lazy" />
             <div className="font-jersey dark:text-white text-black text-2xl ml-1">
               Fixify
             </div>
@@ -128,6 +128,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                         className={`h-3 w-3 ml-1 mt-0.5 group-hover:brightness-0 group-hover:invert transition-all duration-200 ${
                           isDropdownOpen ? "rotate-180" : ""
                         }`}
+                        loading="lazy"
                       />
                     </span>
                   </button>
@@ -213,13 +214,13 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
           <div className="flex items-center bg-[#231212] rounded ">
-            <img src={register} alt="register" className="pl-1 h-5 w-6" />
+            <img src={register} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
             <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Register
             </button>
           </div>
           <div className="flex items-center bg-[#231212] rounded ">
-            <img src={login} alt="login" className="pl-1 h-5 w-6" />
+            <img src={login} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
             <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
               Login
             </button>

@@ -52,7 +52,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <img src={src} alt={alt} className="w-6 h-6 pointer-events-none" />
+      <img src={src} alt={alt} className="w-6 h-6 pointer-events-none" loading="lazy" />
     </div>
   );
 };
@@ -121,6 +121,7 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
                 className={`absolute w-3 h-3 top-1/2 transform -translate-y-1/2 ${
                   darkMode ? "left-1" : "right-1"
                 }`}
+                loading="lazy"
               />
             </button>
 
