@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import tc from "/Fixify_images/termsCondition.svg";
+
 
 const Complaints = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
