@@ -42,10 +42,17 @@ const Register= () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center bg-[url('/Fixify_images/herobg.png')] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 bg-black/55" />
+    <div className="relative min-h-screen flex items-center bg-white dark:bg-black">
+      <div className="absolute inset-0" />
       <div className="w-full py-10 relative z-10">
-        <div className="max-w-md mx-auto p-6 bg-[#231212] dark:bg-black rounded-4xl shadow">
+        <div 
+          onClick={() => {
+            // Make entire form div clickable to focus on form
+            const form = document.querySelector("form");
+            if (form) form.click();
+          }}
+          className="max-w-md mx-auto p-6 bg-[#231212] dark:bg-black rounded-4xl shadow border-2 border-[#231212] cursor-pointer hover:shadow-lg transition-shadow duration-300"
+        >
           <h2 className="text-2xl font-semibold mb-4 text-white dark:text-white">
             Create an account
           </h2>

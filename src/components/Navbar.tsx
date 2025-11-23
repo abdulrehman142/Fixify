@@ -219,20 +219,24 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
         </div>
         {/* Buttons */}
         <div className="flex items-end gap-2 m-6">
-          <div className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded ">
-            <img src={registerIcon} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
+          <div 
+            onClick={() => navigate("/register")}
+            className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded cursor-pointer transition-all duration-300"
+          >
+            <img src={registerIcon} alt="register" className="pl-1 h-5 w-6 pointer-events-none" loading="lazy" />
             <button 
-              onClick={() => navigate("/register")}
-              className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all"
+              className="font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all pointer-events-none cursor-pointer"
             >
               Register
             </button>
           </div>
-          <div className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded ">
-            <img src={loginIcon} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
+          <div 
+            onClick={() => navigate("/login")}
+            className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded cursor-pointer transition-all duration-300"
+          >
+            <img src={loginIcon} alt="login" className="pl-1 h-5 w-6 pointer-events-none" loading="lazy" />
             <button 
-              onClick={() => navigate("/login")}
-              className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all"
+              className="font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all pointer-events-none cursor-pointer"
             >
               Login
             </button>

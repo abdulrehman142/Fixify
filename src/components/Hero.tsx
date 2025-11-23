@@ -126,9 +126,9 @@ const Hero = () => {
           >
             Book Now
           </button>
-          <button className="bg-[#231212] p-2 m-2 border-4 rounded-4xl border-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727]">
+          <a href="tel:03225455658" className="bg-[#231212] p-2 m-2 border-4 rounded-4xl border-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727] flex items-center justify-center transition-all duration-200 cursor-pointer">
             <img src={phoneImg} alt="phone" className="w-7 h-7" loading="lazy" />
-          </button>
+          </a>
           </div>
       </div>
 
