@@ -38,7 +38,6 @@ const Complaints = () => {
       setSuccess(true);
       setName("");
       setEmail("");
-      setSubject("");
       setMessage("");
     } catch {
       setError("Failed to send message. Please try again later.");
