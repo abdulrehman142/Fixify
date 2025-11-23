@@ -96,37 +96,37 @@ const Hero = () => {
 
   return (
     <div className="bg-white dark:bg-black">
-    <div className="flex flex-col md:flex-row text-white transition-all duration-500 min-h-screen">
-      <div className="flex flex-col p-10 flex-1 justify-center">
+    <div className="flex flex-col md:flex-row text-white transition-all duration-500 min-h-screen md:min-h-screen min-h-auto">
+      <div className="flex flex-col p-4 md:p-10 flex-1 justify-center md:justify-center">
         {/* Hero Heading */}
-        <div className="font-ibm-plex-mono text-[#231212] dark:text-white font-bold text-5xl py-4">
+        <div className="font-ibm-plex-mono text-[#231212] dark:text-white font-bold text-3xl md:text-5xl py-2 md:py-4">
           Our experts <br/>will take <br /> it from here
         </div>
-<div className="font-ibm-plex-mono text-black dark:text-white text-xl py-4" >
+<div className="font-ibm-plex-mono text-black dark:text-white text-base md:text-xl py-2 md:py-4" >
   Trusted professionals,<br/>reliable service,every time.
 </div>
         {/* Editable Box + Button */}
-        <div className="bg-[#231212] border-4 border-[#231212] dark:bg-black rounded-full py-3 px-6 flex items-center w-fit">
+        <div className="bg-[#231212] border-4 border-[#231212] dark:bg-black rounded-full py-3 px-4 md:px-6 flex items-center w-fit">
           <div className="text-black w-full">
             {renderEditableBox("editableDiv1", search, setSearch)}
           </div>
 
           <button
             onClick={handleSend}
-            className="p-2 m-2 bg-white dark:bg-[#231212] text-white font-ibm-plex-mono rounded-2xl hover:bg-gray-800 transition-all duration-200"
+            className="p-2 m-2 bg-white dark:bg-[#231212] text-white font-ibm-plex-mono rounded-2xl hover:bg-[#422727] dark:hover:bg-gray-800 transition-all duration-200"
           >
             <img src={searchIcon} alt="search" className="h-6 w-6" loading="lazy" />
           </button>
         </div>
         
-          <div className="flex items-center p-2 m-2">
+          <div className="flex flex-col md:flex-row items-center p-2 m-2 gap-2">
             <button
             onClick={() => navigate("/services")}
-            className="text-white p-3 m-3 mx-8 px-8 border-4 rounded-4xl border-[#231212] transition-all duration-200 text-sm bg-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727]"
+            className="text-white p-3 m-2 md:m-3 mx-4 md:mx-8 px-6 md:px-8 border-4 rounded-4xl border-[#231212] transition-all duration-200 text-sm bg-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727] w-full md:w-auto"
           >
             Book Now
           </button>
-          <a href="tel:03225455658" className="bg-[#231212] p-2 m-2 border-4 rounded-4xl border-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727] flex items-center justify-center transition-all duration-200 cursor-pointer">
+          <a href="tel:03225455658" className="bg-[#231212] p-2 m-2 md:m-2 border-4 rounded-4xl border-[#231212] dark:hover:bg-gray-800 dark:bg-black rounded hover:bg-[#422727] flex items-center justify-center transition-all duration-200 cursor-pointer">
             <img src={phoneImg} alt="phone" className="w-7 h-7" loading="lazy" />
           </a>
           </div>

@@ -15,102 +15,100 @@ interface ServicesProps {
 const Services = ({ darkMode = false }: ServicesProps) => {
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="p-10 bg-white dark:bg-black min-h-screen">
+      <div className="p-4 md:p-10 bg-white dark:bg-black min-h-screen">
         <div className="flex flex-col text-center">
-          <div className="font-bold text-5xl text-[#231212] dark:text-white p-1 m-1">
+          <div className="font-bold text-3xl md:text-5xl text-[#231212] dark:text-white p-1 m-1">
             Services
           </div>
-          <div className="text-md text-[#8e8e93] dark:text-gray-400 p-1 m-1">
+          <div className="text-sm md:text-md text-[#8e8e93] dark:text-gray-400 p-1 m-1">
             Choose from our wide range of services
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="flex justify-between gap-4 p-2 m-2 w-full">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-20 p-2 m-2 w-full">
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={cleanerImg}
                 alt={"cleaner"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Cleaner</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Cleaner</div>
             </button>
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={electricianImg}
                 alt={"electrician"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Electrician</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Electrician</div>
             </button>
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={plumberImg}
                 alt={"plumber"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Plumber</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Plumber</div>
             </button>
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={mechanicImg}
                 alt={"mechanic"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Mechanic</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Mechanic</div>
             </button>
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={moverImg}
                 alt={"mover"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Mover</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Mover</div>
             </button>
             <button className="group flex flex-col items-center justify-center hover:bg-[#231212] dark:hover:bg-gray-800 p-2 rounded transition-colors">
               <img
                 src={technicianImg}
                 alt={"technician"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Technician</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Technician</div>
             </button>
           </div>
-          <div className="flex gap-4 p-2 m-2 w-full justify-center">
-            <div className="flex justify-between gap-25 p-2 m-2">
+          <div className="flex gap-4 md:gap-20 p-2 m-2 w-full justify-center flex-wrap">
             <button className="group flex flex-col items-center justify-center p-2 m-2 hover:bg-[#231212] dark:hover:bg-gray-800 rounded transition-colors">
               <img
                 src={painterImg}
                 alt={"painter"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Painter</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Painter</div>
             </button>
             <button className="group flex flex-col items-center justify-center p-2 m-2 hover:bg-[#231212] dark:hover:bg-gray-800 rounded transition-colors">
               <img
                 src={gardenerImg}
                 alt={"gardener"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Gardener</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Gardener</div>
             </button>
             <button className="group flex flex-col items-center justify-center p-2 m-2 hover:bg-[#231212] dark:hover:bg-gray-800 rounded transition-colors">
               <img
                 src={carpenterImg}
                 alt={"carpenter"}
-                className="w-20 h-20 object-cover rounded flex-shrink-0"
+                className="w-16 md:w-20 h-16 md:h-20 object-cover rounded flex-shrink-0"
                 loading="lazy"
               />
-              <div className="text-center text-xl text-[#231212] group-hover:text-white dark:text-white">Carpenter</div>
+              <div className="text-center text-base md:text-xl text-[#231212] group-hover:text-white dark:text-white">Carpenter</div>
             </button>
-            </div>
           </div>
         </div>
       </div>

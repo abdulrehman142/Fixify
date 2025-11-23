@@ -45,69 +45,69 @@ const Complaints = () => {
   };
 
   return (
-    <div className="flex dark:text-white justify-between dark:bg-black font-sans">
-        <div className="flex flex-col justify-center p-2 m-2">
-      <div className="text-2xl font-bold pl-4 ml-4">
+    <div className="flex flex-col md:flex-row dark:text-white justify-between dark:bg-black font-sans gap-4 md:gap-0">
+        <div className="flex flex-col justify-center p-2 md:p-6 m-2 md:m-4">
+      <div className="text-xl md:text-2xl font-bold pl-0 md:pl-4 md:ml-4">
         Resolving your complaints!
       </div>
-      <div className="pl-4 ml-4 p-2 m-2">
+      <div className="pl-0 md:pl-4 md:ml-4 p-2 m-2 text-sm md:text-base">
         Help us improve Fixify — share your<br/> complaint so we can serve you
         better.
       </div>
       </div>
-      <div className="w-full max-w-3xl m-4 px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        <div className="bg-white dark:bg-black border-2 border-[#231212] dark:border-[#231212] rounded-lg shadow p-8">
-          {error && <div className="mb-4 text-red-500">{error}</div>}
+      <div className="w-full max-w-4xl m-2 md:m-4 px-3 md:px-4 md:px-8 py-6 md:py-8 relative z-10">
+        <div className="bg-white dark:bg-black border-2 border-[#231212] dark:border-[#231212] rounded-lg shadow p-4 md:p-8">
+          {error && <div className="mb-4 text-red-500 text-sm md:text-base">{error}</div>}
           {success && (
-            <div className="mb-4 text-green-600">
+            <div className="mb-4 text-green-600 text-sm md:text-base">
               Message sent — thanks! We'll reply soon.
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label className="block text-sm text-black dark:text-white mb-1">Name</label>
+                <label className="block text-xs md:text-sm text-black dark:text-white mb-1">Name</label>
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full border rounded-2xl border-[#231212] p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                  className="w-full border rounded-2xl border-[#231212] p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none text-sm"
                   placeholder="Your full name"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-black dark:text-white mb-1">Email</label>
+                <label className="block text-xs md:text-sm text-black dark:text-white mb-1">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                  className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none text-sm"
                   placeholder="you@example.com"
                   required
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm text-black dark:text-white mb-1">Message</label>
+              <label className="block text-xs md:text-sm text-black dark:text-white mb-1">Message</label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white min-h-[80px] focus:outline-none"
+                className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white min-h-[100px] md:min-h-[180px] focus:outline-none text-sm"
                 placeholder="Write your message"
                 required
               />
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
               <button
                 type="submit"
-                className="bg-white border rounded-2xl border-[#231212] dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded"
+                className="bg-white border rounded-2xl border-[#231212] dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded w-full md:w-auto text-sm"
               >
                 Send message
               </button>
-              <div className="text-sm text-white dark:text-gray-300">
+              <div className="text-xs md:text-sm text-black dark:text-gray-300 text-center md:text-right">
                 Or email us at{" "}
                 <a href="mailto:gofixify@gmail.com" className="underline">
                   support@fixify.com

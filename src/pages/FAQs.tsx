@@ -59,21 +59,21 @@ const FAQs = () => {
   return (
     <div className="dark:text-white dark:bg-black font-mono leading-relaxed">
       {/* Header */}
-      <div className="flex justify-between items-center bg-[#231212] dark:bg-black text-white p-6 mb-6 shadow-md">
+      <div className="flex flex-col md:flex-row justify-between items-center bg-[#231212] dark:bg-black text-white p-4 md:p-6 mb-6 shadow-md gap-4">
         <div className="">
-          <h2 className="text-5xl font-bold ml-5 pl-5 ">FAQs</h2>
+          <h2 className="text-3xl md:text-5xl font-bold ml-0 md:ml-5 md:pl-5 text-center md:text-left">FAQs</h2>
         </div>
         <img
           src={tc}
           alt="Banner"
-          className="h-70 w-70"
+          className="h-40 md:h-70 w-40 md:w-70"
           loading="lazy"
         />
       </div>
 
       {/* FAQ Container */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="space-y-4">
+      <div className="max-w-4xl mx-auto px-3 md:px-4 py-6 md:py-8">
+        <div className="space-y-3 md:space-y-4">
           {faqData.map((faq) => (
             <div
               key={faq.id}
@@ -82,12 +82,12 @@ const FAQs = () => {
               {/* Question - Clickable Header */}
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full flex items-center justify-between bg-white dark:bg-[#231212] p-4 group-hover:bg-[#422727] dark:group-hover:bg-gray-800  transition-all duration-300 cursor-pointer"
+                className="w-full flex items-center justify-between bg-white dark:bg-[#231212] p-3 md:p-4 group-hover:bg-[#422727] dark:group-hover:bg-gray-800  transition-all duration-300 cursor-pointer"
               >
-                <span className="text-lg font-semibold text-[#231212] group-hover:text-white dark:text-white transition-all duration-300 text-left">
+                <span className="text-sm md:text-lg font-semibold text-[#231212] group-hover:text-white dark:text-white transition-all duration-300 text-left">
                   {faq.question}
                 </span>
-                <span className={`ml-4 flex-shrink-0 text-[#231212] group-hover:text-white dark:text-white dark:group-hover:text-white transform transition-all duration-500 ${
+                <span className={`ml-2 md:ml-4 flex-shrink-0 text-[#231212] group-hover:text-white dark:text-white dark:group-hover:text-white transform transition-all duration-500 text-sm md:text-base ${
                   expandedId === faq.id ? "rotate-180 scale-125" : "scale-100 group-hover:scale-110"
                 }`}>
                   ▼
@@ -98,8 +98,8 @@ const FAQs = () => {
               <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 expandedId === faq.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}>
-                <div className="p-4 border-2 border-gray-300">
-                  <p className="text-black dark:text-white">
+                <div className="p-3 md:p-4 border-2 border-gray-300">
+                  <p className="text-sm md:text-base text-black dark:text-white">
                     {faq.answer}
                   </p>
                 </div>
