@@ -56,7 +56,7 @@ const Complaints = () => {
       </div>
       </div>
       <div className="w-full max-w-3xl m-4 px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        <div className="bg-[#231212] dark:bg-black border-2 border-[#231212] dark:border-[#231212] rounded-lg shadow p-8">
+        <div className="bg-white dark:bg-black border-2 border-[#231212] dark:border-[#231212] rounded-lg shadow p-8">
           {error && <div className="mb-4 text-red-500">{error}</div>}
           {success && (
             <div className="mb-4 text-green-600">
@@ -67,34 +67,34 @@ const Complaints = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm text-white mb-1">Name</label>
+                <label className="block text-sm text-black dark:text-white mb-1">Name</label>
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                  className="w-full border rounded-2xl border-[#231212] p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                   placeholder="Your full name"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-white mb-1">Email</label>
+                <label className="block text-sm text-black dark:text-white mb-1">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                  className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                   placeholder="you@example.com"
                   required
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm text-white mb-1">Message</label>
+              <label className="block text-sm text-black dark:text-white mb-1">Message</label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white min-h-[80px] focus:outline-none"
+                className="w-full p-2 border rounded-2xl border-[#231212] bg-white dark:bg-[#231212] text-black dark:text-white min-h-[80px] focus:outline-none"
                 placeholder="Write your message"
                 required
               />
@@ -103,7 +103,7 @@ const Complaints = () => {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="bg-white dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded"
+                className="bg-white border rounded-2xl border-[#231212] dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded"
               >
                 Send message
               </button>
