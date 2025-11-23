@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Register: React.FC = () => {
+const Register= () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -67,7 +67,7 @@ const Register: React.FC = () => {
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Jane Doe"
                 required
               />
@@ -79,7 +79,7 @@ const Register: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="you@example.com"
                 required
               />
@@ -91,7 +91,7 @@ const Register: React.FC = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Enter a password"
                 required
               />
@@ -103,13 +103,13 @@ const Register: React.FC = () => {
                 type="password"
                 value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
-                className="w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-3 p-2 rounded border-3xl bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Repeat your password"
                 required
               />
 <div className="items-center justify-center flex">
               <button
-                className="bg-white dark:bg-[#231212] dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800  hover:text-white text-black p-2 px-4 m-2 rounded"
+                className="border-2 border-white bg-white dark:bg-[#231212] dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800  hover:text-white text-black p-2 px-4 m-2 rounded"
                 type="submit"
               >
                 Register

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Login: React.FC = () => {
+const Login= () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -36,14 +36,16 @@ const Login: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <label className="block mb-2 text-sm text-white dark:black">
+              <label className="block mb-2 text-sm text-white dark:text-white">
                 Email
               </label>
               <input
                 type="email"
+                id="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full mb-3 p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-3 p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="you@example.com"
                 required
               />
@@ -53,17 +55,24 @@ const Login: React.FC = () => {
               </label>
               <input
                 type="password"
+                id="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full mb-4 p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
+                className="border-2 border-white w-full mb-4 p-2 rounded bg-white dark:bg-[#231212] text-black dark:text-white focus:outline-none"
                 placeholder="Your password"
                 required
               />
 
               <div className="flex items-center justify-between mb-4 text-sm text-white dark:text-gray-300">
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" className="form-checkbox focus:outline-none" /> Remember
-                  me
+                  <input 
+                    type="checkbox" 
+                    id="remember" 
+                    name="remember"
+                    className="form-checkbox focus:outline-none" 
+                  /> 
+                  Remember me
                 </label>
                 <Link to="/" className="underline">
                   Forgot password?
@@ -71,7 +80,7 @@ const Login: React.FC = () => {
               </div>
 <div className="flex items-center justify-center">
               <button
-                className="bg-white dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded"
+                className="border-2 border-white bg-white dark:bg-[#231212] hover:text-white dark:text-white hover:bg-[#422727] dark:hover:bg-gray-800 text-black p-2 px-4 rounded"
                 type="submit"
               >
                 Login
