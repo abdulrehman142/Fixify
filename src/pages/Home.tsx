@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import Hero from "../components/Hero";
 import Whychooseus from "../components/Whychooseus";
-import Services from "./Services";
+import Services from "./services/Services";
 import Complaints from "../components/Complaints";
 import Rating from "../components/Rating";
 
