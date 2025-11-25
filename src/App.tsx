@@ -82,7 +82,7 @@ const Pestcleaning = lazy(() => import("./pages/services/cleaning/Pestcleaning")
 const Sofacleaning = lazy(() => import("./pages/services/cleaning/Sofacleaning"));
 const Glasscleaning = lazy(() => import("./pages/services/cleaning/Glasscleaning"));
 const Kitchencleaning = lazy(() => import("./pages/services/cleaning/Kitchencleaning"));
-const Checkout = lazy(() => import("./pages/checkout"));
+const Checkout = lazy(() => import("./pages/Checkout"));
 // Loading fallback component
 const LoadingSpinner = () => (
   <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black">
