@@ -84,11 +84,11 @@ const Footer = ({ darkMode, setDarkMode }: FooterProps) => {
               <Link to="/contact" className={navLinkClass}>
                 Contact Us
               </Link>
-              <Link to="/pricing" className={navLinkClass}>
+              <Link to="/faqs" className={navLinkClass}>
                 FAQs
               </Link>
-              <Link to="/signin" className={navLinkClass}>
-                Sign In
+              <Link to="/login" className={navLinkClass}>
+                Login
               </Link>
             </div>
             {/* Third Column */}

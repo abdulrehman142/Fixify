@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface DropdownProps {
   darkMode: boolean;
 }
@@ -15,15 +17,15 @@ import carpenterImg from "/Fixify_images/carpenter.svg";
 
 const Dropdown = ({ darkMode }: DropdownProps) => {
   const services = [
-    { name: "Cleaner", img: cleanerImg },
-    { name: "Electrician", img: electricianImg },
-    { name: "Plumber", img: plumberImg },
-    { name: "Mechanic", img: mechanicImg },
-     { name: "Carpenter", img: carpenterImg },
-    { name: "Mover", img: moverImg },
-    { name: "Technician", img: technicianImg },
-    { name: "Painter", img: painterImg },
-    { name: "Gardener", img: gardenerImg },
+    { name: "Cleaner", img: cleanerImg, route: "/cleaner" },
+    { name: "Electrician", img: electricianImg, route: "/electrician" },
+    { name: "Plumber", img: plumberImg, route: "/plumber" },
+    { name: "Mechanic", img: mechanicImg, route: "/mechanic" },
+    { name: "Carpenter", img: carpenterImg, route: "/carpenter" },
+    { name: "Mover", img: moverImg, route: "/mover" },
+    { name: "Technician", img: technicianImg, route: "/technician" },
+    { name: "Painter", img: painterImg, route: "/painter" },
+    { name: "Gardener", img: gardenerImg, route: "/gardener" },
   ];
 
   return (
@@ -33,7 +35,8 @@ const Dropdown = ({ darkMode }: DropdownProps) => {
         : "bg-[#231212] border-[#231212]"
     }`}>
       {services.map((service, index) => (
-        <div 
+        <Link 
+          to={service.route}
           key={index}
           className={`border-[#231212] m-1 rounded-md transition-all duration-200 cursor-pointer flex items-center gap-2 px-3 py-2 w-48 ${
             darkMode
@@ -45,7 +48,7 @@ const Dropdown = ({ darkMode }: DropdownProps) => {
           <div className="font-ibm-plex-mono text-sm truncate">
             {service.name}
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

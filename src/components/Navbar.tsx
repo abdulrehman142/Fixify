@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fixifyLogo from "/Fixify_images/fixifylogo.png";
 import dropdownArrowLight from "/Fixify_images/dropdown.png";
 
@@ -75,6 +75,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 };
 
 const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
+  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -95,18 +96,18 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="flex dark:bg-black bg-white items-center justify-between pl-4 ">
+      <div className="flex dark:bg-black bg-white items-center justify-between pl-2 md:pl-4 flex-wrap md:flex-nowrap">
         {/* 🟢 Left: Logo + Brand */}
         <div className="flex">
           <div className="flex items-center p-2">
             <img src={fixifyLogo} alt="Fixify Logo" className="h-6 w-6" loading="lazy" />
-            <div className="font-jersey dark:text-white text-black text-2xl ml-1">
+            <div className="font-jersey dark:text-white text-black text-xl md:text-2xl ml-1">
               Fixify
             </div>
           </div>
 
-          {/* 🟣 Middle: Nav Links */}
-          <div className="flex p-6 relative">
+          {/* 🟣 Middle: Nav Links - Hidden on mobile */}
+          <div className="hidden lg:flex p-6 relative">
             {[
               { name: "Home", href: "/" },
               { name: "Services", href: "/services" },
@@ -157,8 +158,8 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             ))}
           </div>
 
-          {/* 🔵 Right: Social Icons + Dark Mode Toggle + Buttons */}
-          <div className="flex justify-between p-4 m-4">
+          {/* 🔵 Right: Social Icons + Dark Mode Toggle */}
+          <div className="hidden md:flex justify-between p-4 m-4">
             {/* Social Icons */}
             <div className="flex">
               <a
@@ -216,20 +217,30 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             </div>
           </div>
         </div>
-        {/* Buttons */}
-        <div className="flex items-end gap-2 m-6">
-          <div className="flex items-center bg-[#231212] rounded ">
-            <img src={registerIcon} alt="register" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+        {/* Buttons - Stack on mobile */}
+        <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2 m-2 md:m-6 w-full md:w-auto">
+          <div 
+            onClick={() => navigate("/register")}
+            className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded cursor-pointer transition-all duration-300 w-full md:w-auto justify-center md:justify-start"
+          >
+            <img src={registerIcon} alt="register" className="pl-1 h-5 w-6 pointer-events-none" loading="lazy" />
+            <button 
+              className="font-ibm-plex-mono text-center text-white text-xs md:text-sm p-2 hover:opacity-90 transition-all pointer-events-none cursor-pointer whitespace-nowrap"
+            >
               Register
             </button>
           </div>
-          <div className="flex items-center bg-[#231212] rounded ">
-            <img src={loginIcon} alt="login" className="pl-1 h-5 w-6" loading="lazy" />
-            <button className="hover:underline font-ibm-plex-mono text-center text-white text-sm p-2 hover:opacity-90 transition-all">
+          <div 
+            onClick={() => navigate("/login")}
+            className="flex items-center bg-[#231212] hover:bg-[#422727] dark:hover:bg-gray-800 rounded cursor-pointer transition-all duration-300 w-full md:w-auto justify-center md:justify-start"
+          >
+            <img src={loginIcon} alt="login" className="pl-1 h-5 w-6 pointer-events-none" loading="lazy" />
+            <button 
+              className="font-ibm-plex-mono text-center text-white text-xs md:text-sm p-2 hover:opacity-90 transition-all pointer-events-none cursor-pointer whitespace-nowrap"
+            >
               Login
-            </span>
-          </Link>
+            </button>
+          </div>
         </div>
       </div>
     </div>

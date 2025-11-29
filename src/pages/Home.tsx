@@ -1,7 +1,9 @@
 import type { Dispatch, SetStateAction } from "react";
 import Hero from "../components/Hero";
 import Whychooseus from "../components/Whychooseus";
-import Services from "./Services";
+import Services from "./services/Services";
+import Complaints from "../components/Complaints";
+import Rating from "../components/Rating";
 
 type HomeProps = {
   darkMode: boolean;
@@ -14,6 +16,8 @@ export default function Home({ darkMode }: HomeProps) {
       <Hero />
       <Services darkMode={darkMode} />
       <Whychooseus darkMode={darkMode} />
+      <Rating/>
+      <Complaints/>
     </>
   );
 }
